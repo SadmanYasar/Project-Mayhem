@@ -9,10 +9,10 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask aimLayerMask;
     [SerializeField] GameObject pistol;
 
+    public static Vector3 Direction;
 
 
-
-    Animator animator;
+    public static Animator animator;
 
     private Vector3 velocity = Vector3.zero;
 
@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
             direction.y = 0f;
             direction.Normalize();
             transform.forward = direction;
+            Direction = direction;
             
         }
     }    
@@ -100,17 +101,6 @@ public class Player : MonoBehaviour
                 direction *= Cameraspeed;
                 Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, Camera.main.transform.position + direction, ref velocity, 0.3f);
                 }
-        }
-    }
-
-
-    private void OnCollisionStay(Collision other) {
-        if ( other.gameObject.CompareTag("Pistol") && Input.GetMouseButton(1))
-        {
-            pistol.gameObject.SetActive(true);
-            animator.SetLayerWeight(1,1.0f);
-            Destroy(other.gameObject);
-            
         }
     }
     

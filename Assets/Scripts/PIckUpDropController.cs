@@ -6,7 +6,7 @@ public class PIckUpDropController : MonoBehaviour
 {
     public Rigidbody rb;
     public BoxCollider coll;
-    public Transform player, gunContainer, camera;
+    public Transform player, gunContainer;
 
     public float pickupRange;
     public float dropForwardForce, dropUpForce;
@@ -14,34 +14,84 @@ public class PIckUpDropController : MonoBehaviour
     public bool equipped;
     public static bool slotfull;
 
+    void Start() {
+        if (!equipped)
+        {
+            rb.isKinematic = false;
+            coll.isTrigger = false;
+        }
+
+        if (equipped)
+        {
+            rb.isKinematic = true;
+            coll.isTrigger = true;
+            slotfull = true;
+        }
+
+
+    }
+
     void Update() {
         //check if inrange and right clicked
         Vector3 distanceToPlayer = player.position - transform.position;
-        if (!equipped && distanceToPlayer.magnitude <= pickupRange && Input.GetMouseButton(1) && !slotfull )
+        if (!equipped && distanceToPlayer.magnitude <= pickupRange && Input.GetMouseButtonDown(1) && !slotfull )
         {
             PickUp();
         }
-        if ( equipped && Input.GetMouseButton(1) )
+        if ( equipped && Input.GetKeyDown(KeyCode.Q) )
         {
             Drop();
         }
     }
 
     private void PickUp() {
+        
+        Player.animator.SetLayerWeight(1,1.0f);
         equipped = true;
         slotfull = true;
+
+        //make weapon child of gunContainer and set position
+        transform.SetParent(gunContainer);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localScale = Vector3.one * 2;
 
         rb.isKinematic = true;
         coll.isTrigger = true;
 
+
+
     }
 
     private void Drop() {
+        rb.constraints = RigidbodyConstraints.FreezePositionY;
+        Player.animator.SetLayerWeight(1,0f);
         equipped = false;
         slotfull = false;
 
+        //set parent to null
+        transform.SetParent(null);
+
         rb.isKinematic = false;
         coll.isTrigger = false;
+
+        //gun carries momentum of player
+        //rb.velocity = player.GetComponent<Rigidbody>().velocity;
+
+        //add force
+        rb.AddForce(Player.Direction * dropForwardForce, ForceMode.Impulse);
+        float random = Random.Range(-5f,5f);
+        rb.AddTorque(new Vector3(random,random,random)*10);
+
+    
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            rb.constraints = RigidbodyConstraints.None;
+        }
+        
     }
 
 }
