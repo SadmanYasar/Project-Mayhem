@@ -53,7 +53,9 @@ public class PIckUpDropController : MonoBehaviour
         //make weapon child of gunContainer and set position
         transform.SetParent(gunContainer);
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
+
+  
+        transform.localRotation = Quaternion.Euler(0,3.51f,0);
         transform.localScale = Vector3.one * 2;
 
         rb.isKinematic = true;
@@ -74,9 +76,6 @@ public class PIckUpDropController : MonoBehaviour
 
         rb.isKinematic = false;
         coll.isTrigger = false;
-
-        //gun carries momentum of player
-        //rb.velocity = player.GetComponent<Rigidbody>().velocity;
 
         //add force
         rb.AddForce(Player.Direction * dropForwardForce, ForceMode.Impulse);

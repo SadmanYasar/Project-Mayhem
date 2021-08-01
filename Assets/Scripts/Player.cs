@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float Cameraspeed = 5f;
     [SerializeField] LayerMask aimLayerMask;
-    [SerializeField] GameObject pistol;
 
     public static Vector3 Direction;
 
@@ -83,7 +82,7 @@ public class Player : MonoBehaviour
             direction.Normalize();
             transform.forward = direction;
             Direction = direction;
-            
+
         }
     }    
 
