@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    [SerializeField]private GameObject[] walkPoints;
+    [SerializeField]private int wpIndex;
+
     private void Awake() {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -48,7 +51,7 @@ public class Enemy : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude <= 0.1f)
         {
             //walkpoint reached
             walkPointSet = false;
@@ -59,10 +62,16 @@ public class Enemy : MonoBehaviour
     }
     private void SearchWalkPoint() {
         //calculate random point in range
-        float randomZ =  Random.Range(-walkPointRange, walkPointRange);
-        float randomX =  Random.Range(-walkPointRange, walkPointRange);
+        /* float randomZ =  Random.Range(-walkPointRange, walkPointRange);
+        float randomX =  Random.Range(-walkPointRange, walkPointRange); */
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        //walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        if ( wpIndex >= walkPoints.Length)
+        {
+            wpIndex = 0;
+        }
+        walkPoint = walkPoints[wpIndex].transform.position;
+        wpIndex++;
 
         if ( Physics.Raycast(walkPoint, - transform.up, 2f, whatIsGround) )
         {
