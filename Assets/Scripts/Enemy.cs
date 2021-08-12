@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     //Patrolling
     public Vector3 walkPoint;
-    bool walkPointSet;
+    [SerializeField]bool walkPointSet;
 
     //Attacking
     [SerializeField]private float attackRange;
@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
     public bool canSeePlayer;
 
     private void Awake() {
-        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         StartCoroutine(FOVRoutine());
     }
@@ -78,24 +77,14 @@ public class Enemy : MonoBehaviour
             canSeePlayer = false;
     }
 
-    private void Update() {
-        //check sight and attack range
-        /* playerInSightRange = Physics.CheckSphere(transform.position,sightRange,whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position,attackRange,whatIsPlayer);
-
-        if (!playerInSightRange && !playerInAttackRange) Patrolling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer(); */
-
+    void Update()
+    {
         if ( canSeePlayer ) {
             ChasePlayer();
         } else Patrolling();
-        
     }
 
-    
-
-    private void Patrolling() {
+    public void Patrolling() {
         if ( !walkPointSet ) SearchWalkPoint();
 
         if (walkPointSet)
@@ -109,32 +98,36 @@ public class Enemy : MonoBehaviour
         {
             //walkpoint reached
             walkPointSet = false;
+           
         }
     
     
     
     }
-    private void SearchWalkPoint() {
-        //calculate random point in range
-        /* float randomZ =  Random.Range(-walkPointRange, walkPointRange);
-        float randomX =  Random.Range(-walkPointRange, walkPointRange); */
-
-        //walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+    public void SearchWalkPoint() {
+        
         if ( wpIndex >= walkPoints.Length)
         {
             wpIndex = 0;
         }
+        
+        //move in squares
         walkPoint = walkPoints[wpIndex].transform.position;
+        
         wpIndex++;
+        
 
-        if ( Physics.Raycast(walkPoint, - transform.up, 2f, whatIsGround) )
+        walkPointSet = true;
+        /* if ( Physics.Raycast(walkPoint, - transform.up, 2f, whatIsGround) )
         {
             walkPointSet = true;
-        }
+            
+            
+        } */
     
     }
 
-    private void ChasePlayer() {
+    public void ChasePlayer() {
         agent.SetDestination(player.position);
         float playerEnemyDist = Vector3.Magnitude(player.position - transform.position);
         if ( playerEnemyDist <= attackRange )
@@ -143,7 +136,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void AttackPlayer() {
+    public void AttackPlayer() {
         //make sure enemy doesnt move
         agent.SetDestination(transform.position);
         transform.LookAt(player);
@@ -161,13 +154,6 @@ public class Enemy : MonoBehaviour
     private void ResetAttack() {
         alreadyAttacked = false;
     }
-
-    /* private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
-    } */
 
     
 
