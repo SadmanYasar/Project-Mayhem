@@ -5,5 +5,10 @@ using UnityEngine;
 public class EnemyRoamer : Enemy
 {
     // Update is called once per frame
-
+    void Update()
+    {
+        if ( canSeePlayer ) {
+            ChasePlayer();
+        } else Patrolling();
+    }
 }

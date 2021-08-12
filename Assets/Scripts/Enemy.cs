@@ -77,12 +77,7 @@ public class Enemy : MonoBehaviour
             canSeePlayer = false;
     }
 
-    void Update()
-    {
-        if ( canSeePlayer ) {
-            ChasePlayer();
-        } else Patrolling();
-    }
+    
 
     public void Patrolling() {
         if ( !walkPointSet ) SearchWalkPoint();
