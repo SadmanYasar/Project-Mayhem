@@ -2208,7 +2208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7999539364262696734
 Transform:
   m_ObjectHideFlags: 0
@@ -2412,7 +2412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8780169574157054151
 Transform:
   m_ObjectHideFlags: 0
@@ -2492,7 +2492,7 @@ NavMeshAgent:
   m_Radius: 0.5
   m_Speed: 4
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 49
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -2524,7 +2524,7 @@ MonoBehaviour:
     m_Bits: 8
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
-  attackRange: 7
+  attackRange: 10
   timeBetweenAttacks: 0.5
   walkPoints:
   - {fileID: 0}
@@ -2532,7 +2532,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   wpIndex: 0
-  radius: 5
+  radius: 20
   angle: 180
   obstructionMask:
     serializedVersion: 2
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44e41d4a88fa95459dd21efbe922d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 20
   angle: 180
   playerRef: {fileID: 0}
   targetMask:

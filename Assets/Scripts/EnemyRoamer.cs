@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyRoamer : Enemy
 {
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if ( canSeePlayer ) {
+        if (canSeePlayer ) {
             ChasePlayer();
         } else Patrolling();
     }

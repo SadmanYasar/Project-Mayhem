@@ -32,8 +32,10 @@ public class Enemy : MonoBehaviour
 
     public bool canSeePlayer;
 
+    [SerializeField]private int speed;
+
     private void Awake() {
-        agent = GetComponent<NavMeshAgent>();
+        agent.updatePosition = false;
         StartCoroutine(FOVRoutine());
     }
 
@@ -80,11 +82,16 @@ public class Enemy : MonoBehaviour
     
 
     public void Patrolling() {
+        if ( agent.speed == 0 )
+        {
+            agent.speed = speed*Time.fixedDeltaTime;
+        }
         if ( !walkPointSet ) SearchWalkPoint();
 
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 0.5f);
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -123,7 +130,13 @@ public class Enemy : MonoBehaviour
     }
 
     public void ChasePlayer() {
+        if ( agent.speed == 0 )
+        {
+            agent.speed = speed*Time.fixedDeltaTime;
+        }
         agent.SetDestination(player.position);
+        transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 0.5f);
+        
         float playerEnemyDist = Vector3.Magnitude(player.position - transform.position);
         if ( playerEnemyDist <= attackRange )
         {
@@ -133,7 +146,8 @@ public class Enemy : MonoBehaviour
 
     public void AttackPlayer() {
         //make sure enemy doesnt move
-        agent.SetDestination(transform.position);
+        //agent.SetDestination(transform.position);
+        agent.speed = 0;
         transform.LookAt(player);
 
         if (!alreadyAttacked)

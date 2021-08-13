@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyIdle : Enemy
 {
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if ( canSeePlayer )
         {
