@@ -2281,5 +2281,9 @@ PrefabInstance:
       propertyPath: attackRange
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6102558473789577532, guid: 747b4a93e0cd0934db5b82f361994f56, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6d6f30fc3c4c2074e83b3d0cd9266828, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747b4a93e0cd0934db5b82f361994f56, type: 3}

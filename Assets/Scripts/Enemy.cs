@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]private int speed;
 
+    Vector3 velocity = Vector3.zero;
+
     private void Awake() {
         agent.updatePosition = false;
         StartCoroutine(FOVRoutine());
@@ -91,7 +93,8 @@ public class Enemy : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
-            transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 0.5f);
+            //transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 1f);
+            transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f );
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -135,7 +138,8 @@ public class Enemy : MonoBehaviour
             agent.speed = speed*Time.fixedDeltaTime;
         }
         agent.SetDestination(player.position);
-        transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 0.5f);
+        //transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 1f);
+        transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f );
         
         float playerEnemyDist = Vector3.Magnitude(player.position - transform.position);
         if ( playerEnemyDist <= attackRange )
