@@ -7,8 +7,13 @@ public class EnemyRoamer : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (canSeePlayer ) {
+        if (canSeePlayer && !isDead ) {
             ChasePlayer();
-        } else Patrolling();
+        } else if (!isDead)
+        {
+            Patrolling();
+        }
+        
+        
     }
 }

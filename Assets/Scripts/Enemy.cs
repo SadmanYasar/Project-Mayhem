@@ -5,17 +5,20 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public Transform player;
-    public LayerMask whatIsGround, whatIsPlayer;
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private Transform player;
+    [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
+
+    [SerializeField] private Collider enemyCollider;
+    [SerializeField] private Animator enemyAnimator;
 
     //Patrolling
-    public Vector3 walkPoint;
+    [SerializeField] private Vector3 walkPoint;
     [SerializeField]bool walkPointSet;
 
     //Attacking
     [SerializeField]private float attackRange;
-    public float timeBetweenAttacks;
+    [SerializeField] private float timeBetweenAttacks;
     bool alreadyAttacked;
 
 
@@ -32,13 +35,20 @@ public class Enemy : MonoBehaviour
 
     public bool canSeePlayer;
 
+    IEnumerator fovCheck;
+
+    //AI motion
     [SerializeField]private int speed;
 
     Vector3 velocity = Vector3.zero;
 
+    public bool isDead;
+
     private void Awake() {
+        isDead = false;
         agent.updatePosition = false;
-        StartCoroutine(FOVRoutine());
+        fovCheck = FOVRoutine();
+        StartCoroutine(fovCheck);
     }
 
 
@@ -86,14 +96,13 @@ public class Enemy : MonoBehaviour
     public void Patrolling() {
         if ( agent.speed == 0 )
         {
-            agent.speed = speed*Time.fixedDeltaTime;
+            agent.speed = speed;
         }
         if ( !walkPointSet ) SearchWalkPoint();
 
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
-            //transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 1f);
             transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f );
         }
 
@@ -123,22 +132,15 @@ public class Enemy : MonoBehaviour
         
 
         walkPointSet = true;
-        /* if ( Physics.Raycast(walkPoint, - transform.up, 2f, whatIsGround) )
-        {
-            walkPointSet = true;
-            
-            
-        } */
     
     }
 
     public void ChasePlayer() {
         if ( agent.speed == 0 )
         {
-            agent.speed = speed*Time.fixedDeltaTime;
+            agent.speed = speed;
         }
         agent.SetDestination(player.position);
-        //transform.position = Vector3.Lerp(transform.position, agent.nextPosition, 1f);
         transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f );
         
         float playerEnemyDist = Vector3.Magnitude(player.position - transform.position);
@@ -150,7 +152,6 @@ public class Enemy : MonoBehaviour
 
     public void AttackPlayer() {
         //make sure enemy doesnt move
-        //agent.SetDestination(transform.position);
         agent.speed = 0;
         transform.LookAt(player);
 
@@ -168,7 +169,12 @@ public class Enemy : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    
+    public void Die() {
+        isDead = true;
+        StopCoroutine(fovCheck);
+        enemyCollider.isTrigger = false;
+        enemyAnimator.enabled = false;
+    }
 
 
 

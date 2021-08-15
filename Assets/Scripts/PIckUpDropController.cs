@@ -90,6 +90,11 @@ public class PIckUpDropController : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints.None;
         }
+        if ( other.gameObject.CompareTag("Enemy") )
+        {
+            rb.constraints = RigidbodyConstraints.None;
+            other.gameObject.GetComponent<Enemy>().Die();
+        }
         
     }
 
