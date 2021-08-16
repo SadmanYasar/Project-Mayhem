@@ -182,7 +182,7 @@ public class Enemy : MonoBehaviour
         if (!alreadyAttacked)
         {
             //Attack code here
-
+            
             //
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
