@@ -3578,7 +3578,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 3402822881849060029}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
-  attackRange: 10
+  attackRange: 5
   timeBetweenAttacks: 0.5
   walkPoints:
   - {fileID: 0}
@@ -3586,7 +3586,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   wpIndex: 0
-  radius: 5
+  radius: 10
   angle: 180
   obstructionMask:
     serializedVersion: 2
@@ -3606,7 +3606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44e41d4a88fa95459dd21efbe922d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 10
   angle: 180
   playerRef: {fileID: 0}
   targetMask:

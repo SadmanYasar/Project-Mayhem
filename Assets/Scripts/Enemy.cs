@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] public NavMeshAgent agent;
     [SerializeField] private Transform player;
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
 
@@ -44,7 +44,14 @@ public class Enemy : MonoBehaviour
 
     public bool isDead;
 
-    private void Awake() {
+    //Animation
+    [SerializeField] Animator enemyAnim;
+    int isWalkingHash;
+    int isRunningHash;
+
+    private void Start() {
+        /* isWalkingHash = Animator.StringToHash("Walk");
+        isWalkingHash = Animator.StringToHash("Run"); */
         isDead = false;
         agent.updatePosition = false;
         fovCheck = FOVRoutine();
@@ -103,6 +110,11 @@ public class Enemy : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            if (enemyAnim.GetBool("Walk") == false || enemyAnim.GetBool("Run") == true )
+            {
+                enemyAnim.SetBool("Run", false);
+                enemyAnim.SetBool("Walk", true);
+            } 
             transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f );
         }
 
@@ -141,6 +153,13 @@ public class Enemy : MonoBehaviour
             agent.speed = speed;
         }
         agent.SetDestination(player.position);
+        if ( enemyAnim.GetBool("Run") == false)
+        {
+            enemyAnim.SetBool("Walk", true);
+            enemyAnim.SetBool("Run", true);
+
+        }
+        
         transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f );
         
         float playerEnemyDist = Vector3.Magnitude(player.position - transform.position);
@@ -153,6 +172,11 @@ public class Enemy : MonoBehaviour
     public void AttackPlayer() {
         //make sure enemy doesnt move
         agent.speed = 0;
+        if (enemyAnim.GetBool("Run") == true)
+        {
+            enemyAnim.SetBool("Run", false);
+            enemyAnim.SetBool("Walk", false);
+        }
         transform.LookAt(player);
 
         if (!alreadyAttacked)
@@ -172,7 +196,7 @@ public class Enemy : MonoBehaviour
     public void Die() {
         isDead = true;
         StopCoroutine(fovCheck);
-        enemyCollider.isTrigger = false;
+        enemyCollider.enabled = false;
         enemyAnimator.enabled = false;
     }
 

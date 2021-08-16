@@ -9,7 +9,9 @@ public class EnemyIdle : Enemy
     {
         if ( canSeePlayer && !isDead)
         {
-            ChasePlayer();
+            AttackPlayer();
         }
+        
+        
     }
 }
