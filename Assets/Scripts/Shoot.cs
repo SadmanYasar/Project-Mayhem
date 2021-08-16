@@ -17,6 +17,9 @@ public class Shoot : MonoBehaviour
 
     private int ammoCapacity = 10;
 
+    private void Start() {
+        
+    }
 
     // Update is called once per frame
     void Update()
