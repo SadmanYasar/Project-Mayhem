@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
     private int ammoCapacity = 10;
 
     //For object pooling
-    public static GameObject bulletPrefab;
+    public GameObject bulletPrefab;
 
     private void Start() {
         PoolManager.instance.CreatePool(bulletPrefab, 10);

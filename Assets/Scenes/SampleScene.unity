@@ -3001,10 +3001,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 543450651689801112}
     - target: {fileID: 4538544432725065265, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4538544432725065265, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
       propertyPath: gunContainer
       value: 
       objectReference: {fileID: 249574292}
@@ -3055,10 +3051,6 @@ PrefabInstance:
     - target: {fileID: 4914315953449680978, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
       propertyPath: m_Name
       value: M1911 with Light
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339117423631382656, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
