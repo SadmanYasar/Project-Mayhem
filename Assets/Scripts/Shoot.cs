@@ -7,8 +7,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Rigidbody bullet;
 
     [SerializeField] private Transform barrel;
-
-    [SerializeField] private float bulletspeed = 1;
+    
     [SerializeField] private float firerate = .2f;
     [SerializeField] private ParticleSystem muzzleFlash;
 
@@ -77,4 +76,5 @@ public class Shoot : MonoBehaviour
             ammoCapacity = 10;
         }
     }
+
 }

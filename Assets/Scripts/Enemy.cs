@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Collider enemyCollider;
     [SerializeField] private Animator enemyAnimator;
 
+    [SerializeField] private GameObject Weapon;
+    [SerializeField] private Transform gunContainer;
+
     //Patrolling
     [SerializeField] private Vector3 walkPoint;
     [SerializeField]bool walkPointSet;
@@ -54,6 +57,15 @@ public class Enemy : MonoBehaviour
         isWalkingHash = Animator.StringToHash("Run"); */
         isDead = false;
         agent.updatePosition = false;
+
+        //make weapon child of gunContainer and set position
+        Weapon.transform.SetParent(gunContainer);
+        Weapon.transform.localPosition = Vector3.zero;
+        Weapon.transform.localRotation = Quaternion.Euler(0,3.51f,0);
+        Weapon.transform.localScale = Vector3.one * 2;
+        Weapon.GetComponent<PIckUpDropController>().enabled = false;
+        Weapon.GetComponent<Shoot>().enabled = false;
+
         fovCheck = FOVRoutine();
         StartCoroutine(fovCheck);
     }
@@ -198,6 +210,11 @@ public class Enemy : MonoBehaviour
         StopCoroutine(fovCheck);
         enemyCollider.enabled = false;
         enemyAnimator.enabled = false;
+        Weapon.transform.SetParent(null);
+        Weapon.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Weapon.GetComponent<PIckUpDropController>().enabled = true;
+        Weapon.GetComponent<Shoot>().enabled = true;
+
     }
 
 

@@ -3493,7 +3493,7 @@ Animator:
   m_GameObject: {fileID: 8255868985449556605}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5642bac89d5c0924085b50eaa9f91901, type: 3}
-  m_Controller: {fileID: 9100000, guid: 038fb02b526363445978c2c4643e411e, type: 2}
+  m_Controller: {fileID: 9100000, guid: ce6ec51cb5b372f4486ce8ce3b2e31d2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3517,7 +3517,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 3
+  m_CollisionDetection: 0
 --- !u!136 &9102853228008019754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3528,10 +3528,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.30954176
+  m_Radius: 0.51344657
   m_Height: 1.7969872
   m_Direction: 1
-  m_Center: {x: -0.00849849, y: 0.9010251, z: 0.07704505}
+  m_Center: {x: -0.00849849, y: 0.9010251, z: 0.28094983}
 --- !u!195 &7999539364812262159
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3541,7 +3541,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8255868985449556605}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 49
@@ -3576,6 +3576,8 @@ MonoBehaviour:
     m_Bits: 8
   enemyCollider: {fileID: 9102853228008019754}
   enemyAnimator: {fileID: 3402822881849060029}
+  Weapon: {fileID: 0}
+  gunContainer: {fileID: 7999539364927579814}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   attackRange: 5
@@ -3594,6 +3596,7 @@ MonoBehaviour:
   canSeePlayer: 0
   speed: 5
   isDead: 0
+  enemyAnim: {fileID: 3402822881849060029}
 --- !u!114 &7999539364812262157
 MonoBehaviour:
   m_ObjectHideFlags: 0

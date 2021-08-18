@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4538544433138890303}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.03, z: -0.175}
+  m_LocalPosition: {x: -0, y: 0.03, z: -0.191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4538544434712244569}
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4914315953449680978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee2d045b2a1cca947b17287a16967b31, type: 3}
   m_Name: 
@@ -328,7 +328,7 @@ MonoBehaviour:
   coll: {fileID: 6338926213222621077}
   player: {fileID: 0}
   gunContainer: {fileID: 0}
-  pickupRange: 1
+  pickupRange: 2
   dropForwardForce: 15
   dropUpForce: 0
   equipped: 0
@@ -339,16 +339,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4914315953449680978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9fb109b67b31a04bb26c50cfb721c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 406731676, guid: beda4cff6a87ab44fad648a19c258c5c, type: 3}
   barrel: {fileID: 4538544433138890300}
-  bulletspeed: 5000
   firerate: 0.3
   muzzleFlash: {fileID: 4538544434730595353}
+  bulletPrefab: {fileID: 6743897034785768255, guid: beda4cff6a87ab44fad648a19c258c5c, type: 3}
 --- !u!1 &4914371702939931346
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: f47cb9d88f4bc6c4bb7441e962c2c1a5, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 4.0286167e-11
+      value: 1.02e-43
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: f47cb9d88f4bc6c4bb7441e962c2c1a5, type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -660,11 +660,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: f47cb9d88f4bc6c4bb7441e962c2c1a5, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 4e-44
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: f47cb9d88f4bc6c4bb7441e962c2c1a5, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 5.986e-42
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: f47cb9d88f4bc6c4bb7441e962c2c1a5, type: 3}
       propertyPath: m_Enabled
