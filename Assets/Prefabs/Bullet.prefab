@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 831838150649181702}
   - component: {fileID: 7811685152410838603}
   - component: {fileID: 6898819272457708964}
-  - component: {fileID: 127882368550681691}
   - component: {fileID: 406731676}
   - component: {fileID: 717403407345658909}
   - component: {fileID: 1116656271332676649}
+  - component: {fileID: 1893873073}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6743897034785768255}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.35, z: 0.192}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 508869338}
   m_Father: {fileID: 0}
@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6743897034785768255}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &127882368550681691
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6743897034785768255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &406731676
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,7 +100,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &717403407345658909
 MonoBehaviour:
@@ -123,12 +109,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6743897034785768255}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abafbc099fee7db4aaa33c8e34c88446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spark: {fileID: 528269210}
+  bulletRb: {fileID: 406731676}
+  bulletTrail: {fileID: 1116656271332676649}
 --- !u!96 &1116656271332676649
 TrailRenderer:
   serializedVersion: 2
@@ -170,7 +157,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.2
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.3
@@ -234,8 +221,21 @@ TrailRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1
-  m_Autodestruct: 1
+  m_Autodestruct: 0
   m_Emitting: 1
+--- !u!65 &1893873073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743897034785768255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.0000005, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &508731480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -243,6 +243,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 831838150649181702}
     m_Modifications:
+    - target: {fileID: 100000, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
       propertyPath: m_Name
       value: WFX_BImpact Metal
@@ -308,6 +312,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
+      propertyPath: stopAction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
@@ -336,10 +344,5 @@ PrefabInstance:
 --- !u!4 &508869338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
-  m_PrefabInstance: {fileID: 508731480}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &528269210 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19800002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
   m_PrefabInstance: {fileID: 508731480}
   m_PrefabAsset: {fileID: 0}
