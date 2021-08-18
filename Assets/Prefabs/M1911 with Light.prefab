@@ -222,8 +222,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4914315953449680978}
-  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 1.0280002, y: 0.16599989, z: 0}
+  m_LocalRotation: {x: 0, y: 0.03062574, z: 0, w: 0.9995309}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4910226302580821004}
@@ -348,7 +348,6 @@ MonoBehaviour:
   barrel: {fileID: 4538544433138890300}
   firerate: 0.3
   muzzleFlash: {fileID: 4538544434730595353}
-  bulletPrefab: {fileID: 6743897034785768255, guid: beda4cff6a87ab44fad648a19c258c5c, type: 3}
 --- !u!1 &4914371702939931346
 GameObject:
   m_ObjectHideFlags: 0

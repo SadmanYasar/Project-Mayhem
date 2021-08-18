@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     //Attacking
     [SerializeField]private float attackRange;
-    [SerializeField] private float timeBetweenAttacks;
+    [SerializeField] private float timeBetweenAttacks = 1.0f;
     bool alreadyAttacked;
 
 
@@ -194,7 +194,7 @@ public class Enemy : MonoBehaviour
         if (!alreadyAttacked)
         {
             //Attack code here
-            
+            //PoolManager.instance.ReuseObject(Shoot.bulletPrefab, transform.forward, transform.rotation);
             //
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

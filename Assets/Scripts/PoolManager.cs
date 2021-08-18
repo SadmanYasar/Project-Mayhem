@@ -14,8 +14,13 @@ public class PoolManager : MonoBehaviour {
 				_instance = FindObjectOfType<PoolManager> ();
 			}
 			return _instance;
+			
 		}
 	}
+
+	/* private void Start() {
+		DontDestroyOnLoad(instance);
+	} */
 
 	public void CreatePool(GameObject prefab, int poolSize) {
 		int poolKey = prefab.GetInstanceID ();
