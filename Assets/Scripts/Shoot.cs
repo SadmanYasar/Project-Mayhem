@@ -20,7 +20,7 @@ public class Shoot : MonoBehaviour
     public GameObject bulletPrefab;
 
     private void Start() {
-        PoolManager.instance.CreatePool(bulletPrefab, 10);
+        PoolManager.instance.CreatePool(bulletPrefab, 20);
     }
 
     // Update is called once per frame
@@ -58,8 +58,9 @@ public class Shoot : MonoBehaviour
             } */
 
             //Method 4
+            GameManager.shotByPlayer = 1;
             PoolManager.instance.ReuseObject(bulletPrefab, barrel.position, barrel.rotation);
-
+            
 
             
            

@@ -7,7 +7,7 @@ public class EnemyIdle : Enemy
     // Update is called once per frame
     void FixedUpdate()
     {
-        if ( canSeePlayer && !isDead)
+        if ( canSeePlayer && !isDead && !GameManager.GameOver )
         {
             AttackPlayer();
         }

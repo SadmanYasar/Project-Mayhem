@@ -13,6 +13,12 @@ public class bullet : PoolObject
         {
             other.gameObject.GetComponent<Enemy>().Die();
         }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.GameOver = true;
+            other.gameObject.GetComponent<Player>().PlayerDie();
+        }
         //spark.Play();
         //Method 3
         //QFSW.MOP2.MasterObjectPooler.Instance.Release(gameObject, "bulletPool");
@@ -25,6 +31,13 @@ public class bullet : PoolObject
 
     public override void OnObjectReuse()
     {
-        bulletRb.AddForce(Player.Direction * 5000);
+        if (GameManager.shotByPlayer == 1)
+        {
+            bulletRb.AddForce(Player.Direction * 5000);
+        } else
+        {
+            bulletRb.AddForce(-Player.Direction * 3000);
+        }
+        
     }
 }

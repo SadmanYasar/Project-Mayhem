@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject Weapon;
     [SerializeField] private Transform gunContainer;
+    [SerializeField] private Transform barrel;
 
     //Patrolling
     [SerializeField] private Vector3 walkPoint;
@@ -22,6 +23,8 @@ public class Enemy : MonoBehaviour
     //Attacking
     [SerializeField]private float attackRange;
     [SerializeField] private float timeBetweenAttacks = 1.0f;
+
+    [SerializeField] private GameObject bulletPrefab;
     bool alreadyAttacked;
 
 
@@ -52,7 +55,7 @@ public class Enemy : MonoBehaviour
     int isWalkingHash;
     int isRunningHash;
 
-    private void Start() {
+    private void Awake() {
         /* isWalkingHash = Animator.StringToHash("Walk");
         isWalkingHash = Animator.StringToHash("Run"); */
         isDead = false;
@@ -193,8 +196,12 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            
             //Attack code here
-            //PoolManager.instance.ReuseObject(Shoot.bulletPrefab, transform.forward, transform.rotation);
+            /* var spawnBullet = Instantiate(bulletPrefab, barrel.position, barrel.rotation);
+            spawnBullet.AddRelativeForce(-Vector3.up * 3000); */
+            GameManager.shotByPlayer = 0;
+            PoolManager.instance.ReuseObject(bulletPrefab, barrel.position, barrel.rotation);
             //
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

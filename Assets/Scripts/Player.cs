@@ -103,6 +103,9 @@ public class Player : MonoBehaviour
         }
     }
     
+    public void PlayerDie() {
+        gameObject.SetActive(false);
+    }
 }
 
     
