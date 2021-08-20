@@ -32,37 +32,10 @@ public class Shoot : MonoBehaviour
             muzzleFlash.Play();
             Camera.main.transform.position = Camera.main.transform.position - (Player.Direction*0.1f);
             nextfire = Time.time + firerate;
-            //Method 1
-            /* var spawnBullet = Instantiate(bullet, barrel.position,barrel.rotation);
-            spawnBullet.AddForce(Player.Direction * bulletspeed); */
-
-            //Method 2
-            /* GameObject spawnBullet = ObjectPooler.SharedInstance.GetPooledObject();
-            if ( spawnBullet != null )
-            {
-                
-                spawnBullet.transform.position = barrel.position;
-                spawnBullet.transform.rotation = barrel.rotation;
-                spawnBullet.SetActive(true);
-                spawnBullet.GetComponent<Rigidbody>().AddForce(-transform.forward * bulletspeed, ForceMode.Impulse);
-                
-            } */
-
-            //Method 3
-
-            /* GameObject spawnBullet = QFSW.MOP2.MasterObjectPooler.Instance.GetObject("bulletPool", barrel.position, barrel.rotation);
-            if ( spawnBullet != null )
-            {
-            spawnBullet.GetComponent<Rigidbody>().AddForce(-transform.forward * bulletspeed, ForceMode.Impulse);
-    
-            } */
 
             //Method 4
             GameManager.shotByPlayer = 1;
             PoolManager.instance.ReuseObject(bulletPrefab, barrel.position, barrel.rotation);
-            
-
-            
            
         }
 

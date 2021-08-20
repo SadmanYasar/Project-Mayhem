@@ -106,7 +106,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9979422, y: 0.015996056, z: 0.062092427}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.005420544, y: 0.21619806, z: -0.01962838}
+  m_ConnectedAnchor: {x: 0.005420911, y: 0.21619804, z: -0.019628465}
   serializedVersion: 2
   m_SwingAxis: {x: -0.06230297, y: 0.013016751, z: 0.9979724}
   m_TwistLimitSpring:
@@ -309,7 +309,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.00000008940697, y: 0.11887907, z: -0.24889903}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27404678, y: 0.0000005662441, z: 0.0000002682209}
+  m_ConnectedAnchor: {x: 0.27404678, y: 0.00000044703484, z: -0.00000008195639}
   serializedVersion: 2
   m_SwingAxis: {x: 0.047623392, y: 0.9013355, z: 0.43049553}
   m_TwistLimitSpring:
@@ -419,7 +419,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.0000004172325, y: 0.25477645, z: -0.09710765}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18464617, y: 0.19957064, z: 0.0024571838}
+  m_ConnectedAnchor: {x: -0.18464607, y: 0.19957067, z: 0.0024575456}
   serializedVersion: 2
   m_SwingAxis: {x: 0.10064648, y: 0.3543468, z: 0.929682}
   m_TwistLimitSpring:
@@ -528,7 +528,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.8927915, y: 0.000000074505806, z: 0.45047}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0024466645, y: -0.4204787, z: -0.020602252}
+  m_ConnectedAnchor: {x: -0.0024469886, y: -0.4204787, z: -0.020602401}
   serializedVersion: 2
   m_SwingAxis: {x: -0.45047, y: 0.000000014901161, z: 0.8927916}
   m_TwistLimitSpring:
@@ -853,7 +853,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9981878, y: 0.048672948, z: 0.035384957}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0073364796, y: 0.38243008, z: 0.038003314}
+  m_ConnectedAnchor: {x: 0.007336027, y: 0.38243005, z: 0.038002934}
   serializedVersion: 2
   m_SwingAxis: {x: -0.035277918, y: -0.0030569881, z: 0.99937296}
   m_TwistLimitSpring:
@@ -993,7 +993,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.97064745, y: 0.0016251365, z: -0.24050145}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.002446847, y: -0.42048007, z: -0.020575978}
+  m_ConnectedAnchor: {x: 0.0024467353, y: -0.42048, z: -0.020576425}
   serializedVersion: 2
   m_SwingAxis: {x: 0.24049729, y: 0.0023844345, z: 0.97064686}
   m_TwistLimitSpring:
@@ -1134,7 +1134,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9629893, y: 0.00041106017, z: 0.26953942}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.09124456, y: -0.06656397, z: -0.00055412855}
+  m_ConnectedAnchor: {x: 0.09124465, y: -0.066564, z: -0.000553763}
   serializedVersion: 2
   m_SwingAxis: {x: -0.26917526, y: -0.050521195, z: 0.9617652}
   m_TwistLimitSpring:
@@ -1655,7 +1655,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9039525, y: -0.022341955, z: 0.4270488}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0024469085, y: -0.40595436, z: -0.00514563}
+  m_ConnectedAnchor: {x: 0.0024464596, y: -0.40595433, z: -0.005145384}
   serializedVersion: 2
   m_SwingAxis: {x: -0.42430353, y: 0.0775107, z: 0.9021966}
   m_TwistLimitSpring:
@@ -1830,7 +1830,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.057601202, y: 0.20860693, z: 0.04858982}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.2761445, y: 0.00000051729234, z: 0.00000047168714}
+  m_ConnectedAnchor: {x: -0.27614468, y: 0.00000057689704, z: -0.00000004130675}
   serializedVersion: 2
   m_SwingAxis: {x: 0.030313533, y: -0.21880123, z: 0.97529846}
   m_TwistLimitSpring:
@@ -2259,7 +2259,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.00000017182902, y: 0.25735122, z: -0.09785091}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.27404684, y: 0.0000003874302, z: 0.00000016205013}
+  m_ConnectedAnchor: {x: -0.2740468, y: 0.00000020861626, z: 0.0000001527369}
   serializedVersion: 2
   m_SwingAxis: {x: 0.07693677, y: 0.35434675, z: 0.9319437}
   m_TwistLimitSpring:
@@ -2583,7 +2583,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.9792271, y: 0.099365495, z: -0.17675078}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.091244526, y: -0.066563986, z: -0.000553512}
+  m_ConnectedAnchor: {x: -0.09124486, y: -0.06656395, z: -0.00055378163}
   serializedVersion: 2
   m_SwingAxis: {x: 0.19488096, y: -0.22047181, z: 0.95572674}
   m_TwistLimitSpring:
@@ -2724,7 +2724,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.96490616, y: 0.12781833, z: -0.22938757}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0024468154, y: -0.405954, z: -0.0051706284}
+  m_ConnectedAnchor: {x: -0.0024467707, y: -0.40595403, z: -0.0051703975}
   serializedVersion: 2
   m_SwingAxis: {x: 0.22890688, y: 0.018638432, z: 0.9732699}
   m_TwistLimitSpring:
@@ -2838,7 +2838,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.04655409, y: 0.15745829, z: -0.1508367}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27614468, y: 0.00000034371928, z: 0.00000036849815}
+  m_ConnectedAnchor: {x: 0.27614468, y: 0.0000005821378, z: -0.00000017172715}
   serializedVersion: 2
   m_SwingAxis: {x: -0.04146222, y: 0.69753057, z: 0.71535444}
   m_TwistLimitSpring:
@@ -3239,7 +3239,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.2e-43, y: 0, z: 0, w: 4.0286167e-11}
+  m_BoundingSphereOverride: {x: NaN, y: 1249124, z: 4.5905e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3283,7 +3283,8 @@ Transform:
   m_LocalRotation: {x: 0.38366777, y: -0.5939689, z: -0.5529263, w: 0.44076356}
   m_LocalPosition: {x: 0.129, y: -0.017, z: 0.0571}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4910111941370799131}
   m_Father: {fileID: 7265550087558657981}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -18.58, y: -90, z: -84.3}
@@ -3755,7 +3756,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.00000008940697, y: 0.118692994, z: -0.24700807}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18669951, y: 0.18451586, z: -0.0006282318}
+  m_ConnectedAnchor: {x: 0.18669917, y: 0.18451588, z: -0.00062849326}
   serializedVersion: 2
   m_SwingAxis: {x: -0.0028807372, y: 0.9013354, z: 0.43311217}
   m_TwistLimitSpring:
@@ -3789,3 +3790,101 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1001 &805980701
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7797421893391923711}
+    m_Modifications:
+    - target: {fileID: 4538544432725065265, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538544432725065265, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538544432725065265, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: gunContainer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538544434722873439, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538544434722873439, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538544434722873439, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538544434722873439, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914315953449680978, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_Name
+      value: M1911 with Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914315953449680978, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339117423631382656, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+--- !u!4 &4910111941370799131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+  m_PrefabInstance: {fileID: 805980701}
+  m_PrefabAsset: {fileID: 0}
