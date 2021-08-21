@@ -3505,13 +3505,12 @@ MonoBehaviour:
     m_Bits: 8
   enemyCollider: {fileID: 9034721702261950579}
   enemyAnimator: {fileID: 3173720714835834340}
-  Weapon: {fileID: 0}
-  gunContainer: {fileID: 7797421893391923711}
-  barrel: {fileID: 0}
+  barrel: {fileID: 4538544433407966241}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   attackRange: 5
   timeBetweenAttacks: 1
+  Weapon: {fileID: 4914315954255366735}
   bulletPrefab: {fileID: 6743897034785768255, guid: beda4cff6a87ab44fad648a19c258c5c, type: 3}
   walkPoints: []
   wpIndex: 0
@@ -3886,5 +3885,15 @@ PrefabInstance:
 --- !u!4 &4910111941370799131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+  m_PrefabInstance: {fileID: 805980701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4538544433407966241 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4538544433138890300, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+  m_PrefabInstance: {fileID: 805980701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4914315954255366735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4914315953449680978, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
   m_PrefabInstance: {fileID: 805980701}
   m_PrefabAsset: {fileID: 0}

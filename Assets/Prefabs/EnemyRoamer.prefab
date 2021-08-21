@@ -3577,11 +3577,12 @@ MonoBehaviour:
     m_Bits: 8
   enemyCollider: {fileID: 9102853228008019754}
   enemyAnimator: {fileID: 3402822881849060029}
-  barrel: {fileID: 0}
+  barrel: {fileID: 4538544434740560210}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   attackRange: 5
   timeBetweenAttacks: 1
+  Weapon: {fileID: 4914315955070252860}
   bulletPrefab: {fileID: 6743897034785768255, guid: beda4cff6a87ab44fad648a19c258c5c, type: 3}
   walkPoints:
   - {fileID: 0}
@@ -3869,7 +3870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4914315953449680978, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
       propertyPath: m_Name
-      value: 'M1911 with Light '
+      value: M1911 with Light
       objectReference: {fileID: 0}
     - target: {fileID: 4914315953449680978, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
       propertyPath: m_IsActive
@@ -3881,8 +3882,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+--- !u!1 &4914315955070252860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4914315953449680978, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+  m_PrefabInstance: {fileID: 1620604782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4910111942168631656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4910111940564823558, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
+  m_PrefabInstance: {fileID: 1620604782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4538544434740560210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4538544433138890300, guid: 0f14f6ca4f8dd584da0dc193fc6d7b52, type: 3}
   m_PrefabInstance: {fileID: 1620604782}
   m_PrefabAsset: {fileID: 0}

@@ -218,11 +218,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &35501094 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4914315955070252860, guid: 4a1bb2d7273228d4eac9f61f2a7744ec, type: 3}
-  m_PrefabInstance: {fileID: 1652933451}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &92080345
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,11 +313,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92080345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &106700935 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4538544434740560210, guid: 4a1bb2d7273228d4eac9f61f2a7744ec, type: 3}
-  m_PrefabInstance: {fileID: 1652933451}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &205533089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,14 +997,6 @@ PrefabInstance:
       value: EnemyIdle (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8255868984516183026, guid: 747b4a93e0cd0934db5b82f361994f56, type: 3}
-      propertyPath: Weapon
-      value: 
-      objectReference: {fileID: 35501094}
-    - target: {fileID: 8255868984516183026, guid: 747b4a93e0cd0934db5b82f361994f56, type: 3}
-      propertyPath: barrel
-      value: 
-      objectReference: {fileID: 106700935}
-    - target: {fileID: 8255868984516183026, guid: 747b4a93e0cd0934db5b82f361994f56, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 543450651689801112}
@@ -1364,10 +1346,6 @@ PrefabInstance:
       propertyPath: gunContainer
       value: 
       objectReference: {fileID: 249574292}
-    - target: {fileID: 4914315955070252860, guid: 4a1bb2d7273228d4eac9f61f2a7744ec, type: 3}
-      propertyPath: m_Name
-      value: M1911 with Light
-      objectReference: {fileID: 0}
     - target: {fileID: 7999539364812262158, guid: 4a1bb2d7273228d4eac9f61f2a7744ec, type: 3}
       propertyPath: player
       value: 
@@ -1492,7 +1470,7 @@ Camera:
     height: 1
   near clip plane: 8
   far clip plane: 200
-  field of view: 50
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

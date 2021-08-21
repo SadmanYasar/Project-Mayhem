@@ -12,8 +12,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Collider enemyCollider;
     [SerializeField] private Animator enemyAnimator;
 
-    //[SerializeField] private GameObject Weapon;
-    //[SerializeField] private Transform gunContainer;
     [SerializeField] private Transform barrel;
 
     //Patrolling
@@ -23,6 +21,8 @@ public class Enemy : MonoBehaviour
     //Attacking
     [SerializeField]private float attackRange;
     [SerializeField] private float timeBetweenAttacks = 1.0f;
+
+    [SerializeField] private GameObject Weapon;
 
     [SerializeField] private GameObject bulletPrefab;
     bool alreadyAttacked;
@@ -60,16 +60,6 @@ public class Enemy : MonoBehaviour
         isWalkingHash = Animator.StringToHash("Run"); */
         isDead = false;
         agent.updatePosition = false;
-
-        //make weapon child of gunContainer and set position
-        /* Weapon.transform.SetParent(gunContainer);
-        Weapon.transform.localPosition = Vector3.zero;
-        Weapon.transform.localRotation = Quaternion.Euler(0,3.51f,0);
-        Weapon.transform.localScale = Vector3.one * 2;
-        Weapon.GetComponent<PIckUpDropController>().enabled = false;
-        Weapon.GetComponent<Shoot>().enabled = false; */
-
-        barrel = FindRecursive(gameObject.transform, "Barrel");
 
         fovCheck = FOVRoutine();
         StartCoroutine(fovCheck);
@@ -217,31 +207,12 @@ public class Enemy : MonoBehaviour
         StopCoroutine(fovCheck);
         enemyCollider.enabled = false;
         enemyAnimator.enabled = false;
-        GameObject Weapon = FindRecursive(gameObject.transform, "M1911 with Light").gameObject;
-        //Debug.Log(Weapon);
-        if (Weapon != null)
-        {
-            Weapon.transform.SetParent(null);
-            Weapon.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            Weapon.GetComponent<PIckUpDropController>().enabled = true;
-            Weapon.GetComponent<Shoot>().enabled = true;
-        }
-        
+
+        Weapon.transform.SetParent(null);
+        Weapon.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Weapon.GetComponent<PIckUpDropController>().enabled = true;
+        Weapon.GetComponent<Shoot>().enabled = true;
 
     }
 
-    private Transform FindRecursive(Transform transform, string name)
-{ 
-    foreach(Transform child in transform) {
-        if (child.name == name)
-            return child;
-
-        Transform result = FindRecursive(child, name);
-
-        if (result != null)
-            return result;
-    }
-
-    return null;
-}
-}
+} 

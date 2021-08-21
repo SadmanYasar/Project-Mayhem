@@ -19,9 +19,6 @@ public class bullet : PoolObject
             GameManager.GameOver = true;
             other.gameObject.GetComponent<Player>().PlayerDie();
         }
-        //spark.Play();
-        //Method 3
-        //QFSW.MOP2.MasterObjectPooler.Instance.Release(gameObject, "bulletPool");
 
         //Method 4
         gameObject.SetActive(false);
