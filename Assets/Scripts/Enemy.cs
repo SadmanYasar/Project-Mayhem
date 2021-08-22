@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     bool alreadyAttacked;
 
+    [SerializeField]private ParticleSystem muzzleFlash;
+
 
     //pathfinding
     [SerializeField]private GameObject[] walkPoints;
@@ -191,6 +193,7 @@ public class Enemy : MonoBehaviour
             
             //Attack code here
             GameManager.shotByPlayer = 0;
+            muzzleFlash.Play();
             PoolManager.instance.ReuseObject(bulletPrefab, barrel.position, barrel.rotation);
             //
             alreadyAttacked = true;
