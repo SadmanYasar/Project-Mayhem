@@ -33,7 +33,7 @@ public class bullet : PoolObject
             bulletRb.AddForce(Player.Direction * 5000);
         } else
         {
-            bulletRb.AddForce(-Player.Direction * 3000);
+            bulletRb.AddForce(Vector3.forward * 3000);
         }
         
     }
