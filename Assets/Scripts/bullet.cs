@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class bullet : PoolObject
 {
-    //[SerializeField] ParticleSystem spark;
     [SerializeField] Rigidbody bulletRb;
     [SerializeField] TrailRenderer bulletTrail;
 
+    
+        
+
     private void OnCollisionEnter(Collision other) {
-        if ( other.gameObject.CompareTag("Enemy") )
+        switch (other.gameObject.name)
+        {
+            case "Enemy": 
+                other.gameObject.GetComponent<Enemy>().Die();
+                break;
+
+            case "Player":
+                GameManager.GameOver = true;
+                other.gameObject.GetComponent<Player>().PlayerDie();
+                break;    
+
+        }
+        /* if ( other.gameObject.CompareTag("Enemy") )
         {
             other.gameObject.GetComponent<Enemy>().Die();
+            GameManager.enemyCount--;
         }
 
         if (other.gameObject.CompareTag("Player"))
         {
             GameManager.GameOver = true;
             other.gameObject.GetComponent<Player>().PlayerDie();
-        }
+        } */
 
         //Method 4
         gameObject.SetActive(false);
@@ -28,13 +43,28 @@ public class bullet : PoolObject
 
     public override void OnObjectReuse()
     {
-        if (GameManager.shotByPlayer == 1)
+        switch (GameManager.shotByPlayer)
+        {
+            
+            case 1:
+                bulletRb.AddForce(Player.Direction * 4000);
+                break;
+
+            case 0:
+                Vector3 playerPos = Player.playerInstance.gameObject.transform.position;
+                bulletRb.AddForce((playerPos - transform.position).normalized * 3000);
+                break;    
+        }
+
+
+        /* if (GameManager.shotByPlayer == 1)
         {
             bulletRb.AddForce(Player.Direction * 5000);
         } else
         {
-            bulletRb.AddForce(Vector3.forward * 3000);
-        }
+            Vector3 playerPos = Player.playerInstance.gameObject.transform.position;
+            bulletRb.AddForce((playerPos - transform.position).normalized * 3000);
+        } */
         
     }
 }

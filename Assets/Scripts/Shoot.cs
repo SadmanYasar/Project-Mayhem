@@ -14,13 +14,13 @@ public class Shoot : MonoBehaviour
     private float nextfire = 0f;
     private bool Equipped;
 
-    private int ammoCapacity = 10;
+    public int ammoCapacity = 10;
 
     //For object pooling
     public GameObject bulletPrefab;
 
     private void Start() {
-        PoolManager.instance.CreatePool(bulletPrefab, 20);
+        PoolManager.instance.CreatePool(bulletPrefab, 100);
     }
 
     // Update is called once per frame
@@ -30,13 +30,14 @@ public class Shoot : MonoBehaviour
         {
             ammoCapacity--;
             muzzleFlash.Play();
-            Camera.main.transform.position = Camera.main.transform.position - (Player.Direction*0.1f);
+            Camera.main.transform.position = Camera.main.transform.position - (Player.Direction*0.2f);
             nextfire = Time.time + firerate;
 
             //Method 4
             GameManager.shotByPlayer = 1;
             PoolManager.instance.ReuseObject(bulletPrefab, barrel.position, barrel.rotation);
            
+            GameManager.ammoText.text = ammoCapacity.ToString();
         }
 
         Reload();
@@ -48,6 +49,7 @@ public class Shoot : MonoBehaviour
         if ( ammoCapacity < 10 && Input.GetKeyDown(KeyCode.R) )
         {
             ammoCapacity = 10;
+            GameManager.ammoText.text = "10";
         }
     }
 

@@ -61,6 +61,7 @@ public class PIckUpDropController : MonoBehaviour
         rb.isKinematic = true;
         coll.isTrigger = true;
 
+        GameManager.ammoText.text = gameObject.GetComponent<Shoot>().ammoCapacity.ToString();
 
 
     }
@@ -81,21 +82,20 @@ public class PIckUpDropController : MonoBehaviour
         rb.AddForce(Player.Direction * dropForwardForce, ForceMode.Impulse);
         float random = Random.Range(-5f,5f);
         rb.AddTorque(new Vector3(random,random,random)*10);
-
     
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("Wall"))
-        {
-            rb.constraints = RigidbodyConstraints.None;
-        }
         if ( other.gameObject.CompareTag("Enemy") )
         {
-            rb.constraints = RigidbodyConstraints.None;
             other.gameObject.GetComponent<Enemy>().Die();
         }
-        
+         
+        if ( !other.gameObject.CompareTag("Player") )
+        {
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
     }
 
 }

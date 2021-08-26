@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour
         isWalkingHash = Animator.StringToHash("Run"); */
         isDead = false;
         agent.updatePosition = false;
+        gameObject.name = "Enemy";
 
         fovCheck = FOVRoutine();
         StartCoroutine(fovCheck);
@@ -215,6 +216,7 @@ public class Enemy : MonoBehaviour
         Weapon.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         Weapon.GetComponent<PIckUpDropController>().enabled = true;
         Weapon.GetComponent<Shoot>().enabled = true;
+        GameManager.checkForWin();
 
     }
 

@@ -27,9 +27,15 @@ public class Player : MonoBehaviour
     float vertical;
 
     public Rigidbody playerRb;
+
+    public static Player playerInstance;
     
-    void Awake() => animator = GetComponent<Animator>();
+    void Awake() {
+        playerInstance = this;
+        animator = GetComponent<Animator>();
+    }
     void Start() {
+        gameObject.name = "Player";
         VelocityXHash = Animator.StringToHash("VelocityX");
         VelocityZHash = Animator.StringToHash("VelocityZ");
     }
@@ -98,7 +104,7 @@ public class Player : MonoBehaviour
                 //Zoom Out Camera
                 
                 direction *= Cameraspeed;
-                Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, Camera.main.transform.position + direction, ref velocity, 0.3f);
+                Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, Camera.main.transform.position + direction * 1.5f, ref velocity, 0.3f);
                 }
         }
     }
