@@ -5,10 +5,6 @@ using UnityEngine;
 public class HeadFollowMouse : MonoBehaviour
 {
      [SerializeField]private GameObject ObjectToMove;
-    private void Start() {
-        Application.targetFrameRate = 75;
-    }
-
 
     // Update is called once per frame
     void Update()

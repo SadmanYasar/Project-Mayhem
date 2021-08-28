@@ -196,6 +196,7 @@ public class Enemy : MonoBehaviour
             GameManager.shotByPlayer = 0;
             muzzleFlash.Play();
             PoolManager.instance.ReuseObject(bulletPrefab, barrel.position, barrel.rotation);
+            AudioManager.instance.Play("ShootSound");
             //
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -216,7 +217,9 @@ public class Enemy : MonoBehaviour
         Weapon.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         Weapon.GetComponent<PIckUpDropController>().enabled = true;
         Weapon.GetComponent<Shoot>().enabled = true;
+        GameManager.Score(100);
         GameManager.checkForWin();
+        this.enabled = false;
 
     }
 

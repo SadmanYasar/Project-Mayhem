@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Enemy
   - Bullet
+  - SF_Door
+  - EnemyBig
   layers:
   - Default
   - TransparentFX

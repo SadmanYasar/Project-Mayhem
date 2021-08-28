@@ -6,34 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
-      value: 224247031146466801070117396c721f12120a246c05233e38694c7cd1e33136e7f479dbc21b1b7c1427a1290a371526
-      flags: 0
-    RecentlyUsedScenePath-1:
-      value: 224247031146466801070117396c721f12120a246c05233e38694c7cd1e33136e7f479dae23930323d3ddc3f01300471e704001fef
-      flags: 0
-    RecentlyUsedScenePath-2:
-      value: 22424703114646680e0b0227036c6b0502180a232d2468252320092a
-      flags: 0
-    RecentlyUsedScenePath-3:
       value: 22424703114646680e072a2b2f07501f04583c2f212768252320092a
       flags: 0
-    RecentlyUsedScenePath-4:
+    RecentlyUsedScenePath-1:
       value: 22424703114646680e0b0227036c72111f19352f223d68252320092a
       flags: 0
-    RecentlyUsedScenePath-5:
+    RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c73150012146a7e66333e243d04
       flags: 0
-    RecentlyUsedScenePath-6:
+    RecentlyUsedScenePath-3:
       value: 22424703114646680e0b0227036c73150012146a7d66333e243d04
       flags: 0
-    RecentlyUsedScenePath-7:
-      value: 2242470311464656143d0f271e264c5f3b161124012d2825633c133af6f9
+    RecentlyUsedScenePath-4:
+      value: 2242470311464656143d0f271e264c5f3a120e2f2068777e38271427fb
       flags: 0
-    RecentlyUsedScenePath-8:
+    RecentlyUsedScenePath-5:
+      value: 22424703114646681d0f0b3150024c0313030b65182d3e24383b1820adc43135eda812ecea357129370bfb25
+      flags: 0
+    RecentlyUsedScenePath-6:
       value: 2242470311464656143d0f271e264c5f22020c253e21273c633c133af6f9
       flags: 0
+    RecentlyUsedScenePath-7:
+      value: 2242470311464656143d0f271e264c5f3a120e2f2068747e38271427fb
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 2242470311464656143d0f271e264c5f3a120e2f2068757e38271427fb
+      flags: 0
     RecentlyUsedScenePath-9:
-      value: 2242470311464656143d0f271e264c5f3a120e2f2068777e38271427fb
+      value: 2242470311464656143d0f271e264c5f3b161124012d2825633c133af6f9
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650

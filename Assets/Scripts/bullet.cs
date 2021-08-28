@@ -7,9 +7,6 @@ public class bullet : PoolObject
     [SerializeField] Rigidbody bulletRb;
     [SerializeField] TrailRenderer bulletTrail;
 
-    
-        
-
     private void OnCollisionEnter(Collision other) {
         switch (other.gameObject.name)
         {
@@ -20,22 +17,10 @@ public class bullet : PoolObject
             case "Player":
                 GameManager.GameOver = true;
                 other.gameObject.GetComponent<Player>().PlayerDie();
-                break;    
+                break;       
 
         }
-        /* if ( other.gameObject.CompareTag("Enemy") )
-        {
-            other.gameObject.GetComponent<Enemy>().Die();
-            GameManager.enemyCount--;
-        }
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            GameManager.GameOver = true;
-            other.gameObject.GetComponent<Player>().PlayerDie();
-        } */
-
-        //Method 4
+        
         gameObject.SetActive(false);
         bulletTrail.Clear();
         
@@ -55,16 +40,5 @@ public class bullet : PoolObject
                 bulletRb.AddForce((playerPos - transform.position).normalized * 3000);
                 break;    
         }
-
-
-        /* if (GameManager.shotByPlayer == 1)
-        {
-            bulletRb.AddForce(Player.Direction * 5000);
-        } else
-        {
-            Vector3 playerPos = Player.playerInstance.gameObject.transform.position;
-            bulletRb.AddForce((playerPos - transform.position).normalized * 3000);
-        } */
-        
     }
 }

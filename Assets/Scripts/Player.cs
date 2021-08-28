@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
     }
     
     public void PlayerDie() {
+        GameManager.restartText.text = "<i>PRESS R TO RESTART</i>";
         gameObject.SetActive(false);
     }
 }

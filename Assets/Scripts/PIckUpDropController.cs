@@ -15,6 +15,7 @@ public class PIckUpDropController : MonoBehaviour
     public static bool slotfull;
 
     void Start() {
+        slotfull = false;
         if (!equipped)
         {
             rb.isKinematic = false;
@@ -27,7 +28,6 @@ public class PIckUpDropController : MonoBehaviour
             coll.isTrigger = true;
             slotfull = true;
         }
-
 
     }
 
@@ -45,7 +45,6 @@ public class PIckUpDropController : MonoBehaviour
     }
 
     private void PickUp() {
-        
         Player.animator.SetLayerWeight(1,1.0f);
         equipped = true;
         slotfull = true;
@@ -62,7 +61,6 @@ public class PIckUpDropController : MonoBehaviour
         coll.isTrigger = true;
 
         GameManager.ammoText.text = gameObject.GetComponent<Shoot>().ammoCapacity.ToString();
-
 
     }
 
@@ -82,6 +80,8 @@ public class PIckUpDropController : MonoBehaviour
         rb.AddForce(Player.Direction * dropForwardForce, ForceMode.Impulse);
         float random = Random.Range(-5f,5f);
         rb.AddTorque(new Vector3(random,random,random)*10);
+        GameManager.ammoText.text = "";
+
     
     }
 
