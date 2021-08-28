@@ -10,7 +10,11 @@ public class MainMenuManager : MonoBehaviour
     public GameObject levels;
 
     private void Start() {
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = Time.timeScale * 1/75 ;
+
         Application.targetFrameRate = 75;
+        AudioManager.instance.ChangeAllPitchValues(0.5f);
         AudioManager.instance.StopAllAudio();
         AudioManager.instance.Play("MainMenuTheme");
     }

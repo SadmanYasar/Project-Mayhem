@@ -516,7 +516,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1891168315}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReturnToMenu
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7013,7 +7013,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1891168315}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: levelUp
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8077,7 +8077,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score : 1000'
+  m_Text: 
 --- !u!222 &2072987278
 CanvasRenderer:
   m_ObjectHideFlags: 0

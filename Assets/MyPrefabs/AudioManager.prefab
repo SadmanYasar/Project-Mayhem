@@ -80,3 +80,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - Name: TutorialTheme
+    audio: {fileID: 8300000, guid: 3bac98c1d87bbd04586fb9f76d61313e, type: 3}
+    Volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

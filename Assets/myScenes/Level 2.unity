@@ -1149,7 +1149,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1891168315}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: levelUp
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15609,7 +15609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 97.535675, y: -52.91829}
+  m_AnchoredPosition: {x: 98.915405, y: -53.796097}
   m_SizeDelta: {x: 128.33722, y: 31.179688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027117886
@@ -15700,7 +15700,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1891168315}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReturnToMenu
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17100,6 +17100,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5476ae29e2e50194abce19e5cacce575, type: 2}
+    - target: {fileID: 1249685551758566652, guid: b7dc17cd685d26b4191cec844489b6df, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1647612806037275410, guid: b7dc17cd685d26b4191cec844489b6df, type: 3}
       propertyPath: m_RootOrder
       value: 9
